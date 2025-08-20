@@ -1,0 +1,155 @@
+// =============================================================================
+// COMPONENTS
+// =============================================================================
+
+// Buttons
+.button {
+  @include button-variant($color-primary, $color-primary-hover);
+}
+
+.button2 {
+  @include button-variant($color-secondary);
+}
+
+// Button wrapper
+.button-wrapper {
+  text-align: center;
+  margin-top: 1em;
+}
+
+// Main content
+main {
+  text-align: center;
+  margin-top: 2em;
+  position: relative;
+  
+  h1 {
+    font-size: $font-size-5xl;
+    font-weight: $font-weight-bold;
+    letter-spacing: -3.6px;
+    line-height: 60px;
+    position: relative;
+    display: block;
+  }
+  
+  .beta {
+    font-size: $font-size-lg;
+    letter-spacing: -0.6px;
+    position: absolute;
+    top: 17px;
+  }
+  
+  .middle {
+    font-size: $font-size-3xl;
+    letter-spacing: -1.6px;
+    display: block;
+    line-height: 1;
+  }
+  
+  .now {
+    font-size: $font-size-sm;
+    margin-top: 5px;
+    font-weight: $font-weight-bold;
+    display: block;
+  }
+  
+  .desc {
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    margin-top: 5px;
+    font-weight: $font-weight-normal;
+    display: block;
+  }
+}
+
+// Gradient text
+.gradient-text {
+  font-size: 4rem;
+  font-weight: bold;
+  @include gradient-text;
+}
+
+// Support site images
+.support_site_img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  top: 0;
+  align-items: center;
+  
+  .chaturbate {
+    width: $logo-chaturbate-width;
+  }
+  
+  .stripchat {
+    width: $logo-stripchat-width;
+  }
+}
+
+// Bot image
+.bot_img {
+  width: $bot-image-width;
+  position: fixed;
+  bottom: 0;
+  left: calc(50% + 6px);
+  transform: translateX(-50%);
+  z-index: $z-index-bot;
+  pointer-events: none; // чтобы не мешать кликам
+}
+
+// Messages
+.message {
+  @include message-base;
+  
+  .br {
+    margin-bottom: $spacing-md;
+  }
+  
+  &.incoming {
+    @include message-incoming;
+  }
+  
+  &.outgoing {
+    @include message-outgoing;
+  }
+  
+  &.horizontal {
+    width: 620px;
+  }
+  
+  &.vertical {
+    width: 290px;
+  }
+}
+
+// Chat container
+.chat .message {
+  transition: transform $transition-fast;
+  will-change: transform;
+}
+
+// First section
+.first {
+  @include flex-center;
+  padding: $spacing-2xl;
+  
+  h2 {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+  }
+  
+  p {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+  }
+  
+  .horizontal {
+    width: 620px;
+  }
+  
+  .vertical {
+    width: 290px;
+  }
+}

@@ -1,0 +1,441 @@
+// =============================================================================
+// SIMPLIFIED SCSS VERSION
+// =============================================================================
+// Studio Bot Website - Simplified SCSS for demonstration
+// =============================================================================
+
+// Import font stylesheets
+@import url(../assets/fonts/uni/stylesheet.css);
+@import url(../assets/fonts/sfpro/stylesheet.css);
+
+// =============================================================================
+// VARIABLES (inline for simplicity)
+// =============================================================================
+
+// Colors
+$color-primary: #0d99ff;
+$color-primary-hover: #0B89E5;
+$color-secondary: #28a745;
+$color-background: #EFEFF3;
+$color-text-primary: #000000;
+$color-text-secondary: #728a96;
+$color-white: #ffffff;
+$color-telegram-blue: #229ED9;
+
+// Typography
+$font-family-primary: 'Inter', sans-serif;
+$font-family-secondary: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+// Font sizes
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-base: 18px;
+$font-size-lg: 20px;
+$font-size-xl: 22px;
+$font-size-2xl: 24px;
+$font-size-3xl: 40px;
+$font-size-4xl: 42px;
+$font-size-5xl: 72px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 10px;
+$spacing-lg: 12px;
+$spacing-xl: 16px;
+$spacing-2xl: 20px;
+$spacing-3xl: 24px;
+
+// Breakpoints
+$breakpoint-mobile: 430px;
+$breakpoint-tablet: 630px;
+$breakpoint-desktop: 1024px;
+
+// =============================================================================
+// MIXINS (inline for simplicity)
+// =============================================================================
+
+@mixin button-base {
+  color: $color-white;
+  font-size: $font-size-base;
+  font-family: $font-family-primary;
+  line-height: 3.55;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  border-radius: 100px;
+  background-position: center center;
+  border-color: transparent;
+  border-style: solid;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  width: min-content;
+  padding: $spacing-md $spacing-2xl;
+  margin: $spacing-md auto;
+}
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+// =============================================================================
+// CSS RESET
+// =============================================================================
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+body {
+  line-height: 1;
+  font-family: $font-family-primary;
+  padding: 0 $spacing-md;
+  background-color: $color-background;
+  -webkit-text-size-adjust: 100%;
+  font-smooth: always;
+  -moz-font-smoothing: grayscale;
+}
+
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+a { text-decoration: none; }
+
+// =============================================================================
+// COMPONENTS
+// =============================================================================
+
+// Buttons
+.button {
+  @include button-base;
+  background-color: $color-primary;
+  
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+}
+
+.button2 {
+  @include button-base;
+  background-color: $color-secondary;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 1em;
+}
+
+// Main content
+main {
+  text-align: center;
+  margin-top: 2em;
+  position: relative;
+  
+  h1 {
+    font-size: $font-size-5xl;
+    font-weight: 700;
+    letter-spacing: -3.6px;
+    line-height: 60px;
+    position: relative;
+    display: block;
+  }
+  
+  .beta {
+    font-size: $font-size-lg;
+    letter-spacing: -0.6px;
+    position: absolute;
+    top: 17px;
+  }
+  
+  .middle {
+    font-size: $font-size-3xl;
+    letter-spacing: -1.6px;
+    display: block;
+    line-height: 1;
+  }
+  
+  .now {
+    font-size: $font-size-sm;
+    margin-top: 5px;
+    font-weight: 700;
+    display: block;
+  }
+  
+  .desc {
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    margin-top: 5px;
+    font-weight: 400;
+    display: block;
+  }
+}
+
+// Gradient text
+.gradient-text {
+  font-size: 4rem;
+  font-weight: bold;
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+// Support site images
+.support_site_img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  top: 0;
+  align-items: center;
+  
+  .chaturbate {
+    width: 80px;
+  }
+  
+  .stripchat {
+    width: 130px;
+  }
+}
+
+// Bot image
+.bot_img {
+  width: 1200px;
+  position: fixed;
+  bottom: 0;
+  left: calc(50% + 6px);
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+// Messages
+.message {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  margin: $spacing-xs 0;
+  padding: $spacing-sm $spacing-lg;
+  font-family: $font-family-secondary;
+  font-size: $font-size-sm;
+  line-height: 20px;
+  word-wrap: break-word;
+  clear: both;
+  
+  .br {
+    margin-bottom: $spacing-md;
+  }
+  
+  &.incoming {
+    margin-right: $spacing-2xl;
+    background-color: $color-white;
+    color: $color-text-primary;
+    border-radius: 18px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  }
+  
+  &.outgoing {
+    float: right;
+    background-color: $color-telegram-blue;
+    color: $color-white;
+    border-radius: 18px;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: $spacing-sm;
+      right: -6px;
+      width: $spacing-lg;
+      height: $spacing-lg;
+      background: $color-telegram-blue;
+      transform: rotate(45deg);
+    }
+  }
+  
+  &.horizontal {
+    width: 620px;
+  }
+  
+  &.vertical {
+    width: 290px;
+  }
+}
+
+.chat .message {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+// First section
+.first {
+  display: flex;
+  padding: $spacing-2xl;
+  align-items: center;
+  justify-content: center;
+  
+  h2 {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+  }
+  
+  p {
+    font-weight: 600;
+    font-size: $font-size-sm;
+  }
+  
+  .horizontal {
+    width: 620px;
+  }
+  
+  .vertical {
+    width: 290px;
+  }
+}
+
+// =============================================================================
+// ANIMATIONS
+// =============================================================================
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.parallax-message {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+// =============================================================================
+// RESPONSIVE DESIGN
+// =============================================================================
+
+@include mobile {
+  h1 .top {
+    font-size: $font-size-4xl !important;
+    letter-spacing: -2px !important;
+  }
+
+  h1 .beta {
+    font-size: $font-size-xs !important;
+    top: 20px !important;
+  }
+
+  h1 .middle {
+    font-size: $font-size-2xl !important;
+    letter-spacing: -1px !important;
+  }
+
+  .desc {
+    font-size: $font-size-xs !important;
+  }
+
+  .message.incoming {
+    margin-right: 0;
+  }
+  
+  .bot_img {
+    width: 700px;
+    z-index: -999;
+  }
+  
+  .button,
+  .button2 {
+    font-size: $font-size-sm;
+    padding: $spacing-sm $spacing-xl;
+  }
+  
+  main {
+    margin-top: 1em;
+  }
+  
+  .button-wrapper {
+    margin-top: 0.5em;
+  }
+  
+  .first {
+    padding: $spacing-lg;
+  }
+}
+
+@include tablet {
+  .message.incoming {
+    margin-right: 0;
+  }
+  
+  .first {
+    flex-direction: column-reverse;
+  }
+
+  .first .horizontal {
+    width: 100%;
+  }
+
+  .first .vertical {
+    width: 290px;
+  }
+  
+  main h1 {
+    font-size: $font-size-4xl;
+    line-height: 1.2;
+  }
+  
+  main .middle {
+    font-size: $font-size-2xl;
+  }
+}
+
+@include desktop {
+  .message.incoming {
+    margin-right: 0;
+  }
+  
+  .first {
+    flex-direction: column-reverse;
+  }
+}

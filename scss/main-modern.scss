@@ -1,0 +1,139 @@
+// =============================================================================
+// MAIN SCSS FILE (Modern Version)
+// =============================================================================
+// Studio Bot Website - Main Stylesheet using @use
+// 
+// Structure:
+// 1. Variables - Colors, fonts, spacing, breakpoints
+// 2. Mixins - Reusable code patterns
+// 3. Reset - CSS reset and base styles
+// 4. Components - Buttons, headers, messages
+// 5. Animations - Keyframes and transitions
+// 6. Responsive - Media queries and mobile styles
+// =============================================================================
+
+// Import SCSS modules using @use (modern approach)
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'reset';
+@use 'components';
+@use 'animations';
+@use 'responsive';
+
+// Import font stylesheets
+@import url(../assets/fonts/uni/stylesheet.css);
+@import url(../assets/fonts/sfpro/stylesheet.css);
+
+// =============================================================================
+// ADDITIONAL UTILITIES & OVERRIDES
+// =============================================================================
+
+// Ensure proper font loading
+.font-loading {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+// Focus states for accessibility
+.button:focus,
+.button2:focus {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .gradient-text {
+    animation: none;
+    background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .button,
+  .button2 {
+    border: 2px solid currentColor;
+  }
+  
+  .message.incoming {
+    border: 1px solid #000;
+  }
+  
+  .message.outgoing {
+    border: 1px solid #fff;
+  }
+}
+
+// Dark mode support (if needed in future)
+@media (prefers-color-scheme: dark) {
+  // Dark mode styles can be added here
+  // body {
+  //   background-color: #1a1a1a;
+  //   color: #ffffff;
+  // }
+}
+
+// =============================================================================
+// PERFORMANCE OPTIMIZATIONS
+// =============================================================================
+
+// Optimize paint operations
+.button,
+.button2,
+.message {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+// Optimize animations
+.gradient-text {
+  will-change: background-position;
+}
+
+// =============================================================================
+// DEBUG & DEVELOPMENT
+// =============================================================================
+
+// Uncomment for development debugging
+// * {
+//   outline: 1px solid red;
+// }
+
+// Grid overlay for development (uncomment when needed)
+// .grid-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   pointer-events: none;
+//   z-index: 9999;
+//   
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-image: 
+//       linear-gradient(to right, rgba(255,0,0,0.1) 1px, transparent 1px),
+//       linear-gradient(to bottom, rgba(255,0,0,0.1) 1px, transparent 1px);
+//     background-size: 20px 20px;
+//   }
+// }
