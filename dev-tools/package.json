@@ -1,0 +1,47 @@
+{
+    "name": "studio-bot-website",
+    "version": "1.0.0",
+    "description": "Studio Bot Website - Modern web application with SCSS architecture",
+    "main": "index.html",
+      "scripts": {
+    "build": "sass scss/main.scss:../style.css --style=compressed",
+    "build:expanded": "sass scss/main.scss:../style.css --style=expanded",
+    "build:modern": "sass scss/main-modern.scss:../build/style-modern.css --style=compressed",
+    "build:modern:expanded": "sass scss/main-modern.scss:../build/style-modern.css --style=expanded",
+    "build:simple": "sass scss/main-simple.scss:../style.css --style=compressed",
+    "build:simple:expanded": "sass scss/main-simple.scss:../style.css --style=expanded",
+    "watch": "sass scss/main.scss:../style.css --watch",
+    "watch:modern": "sass scss/main-modern.scss:../build/style-modern.css --watch",
+    "watch:simple": "sass scss/main-simple.scss:../style.css --watch",
+    "dev": "sass scss/main.scss:../style.css --watch --style=expanded",
+    "dev:modern": "sass scss/main-modern.scss:../build/style-modern.css --watch --style=expanded",
+    "dev:simple": "sass scss/main-simple.scss:../style.css --watch --style=expanded",
+    "clean": "rm -f ../style.css ../style.css.map ../build/style-*.css ../build/style-*.css.map",
+    "lint": "stylelint scss/**/*.scss",
+    "format": "prettier --write scss/**/*.scss"
+  },
+    "keywords": [
+        "scss",
+        "css",
+        "web-design",
+        "responsive",
+        "studio-bot"
+    ],
+    "author": "Studio Bot Team",
+    "license": "MIT",
+    "devDependencies": {
+        "sass": "^1.69.0",
+        "stylelint": "^15.11.0",
+        "stylelint-config-standard-scss": "^11.1.0",
+        "prettier": "^3.0.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ],
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=8.0.0"
+    }
+}

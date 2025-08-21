@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -18,7 +18,6 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="stylesheet" href="./style.css?v=1">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -27,9 +26,9 @@
 <body>
   <div class="support_site_img">
     <img class="chaturbate" src="./assets/img/chaturbate_logo.svg"
-      alt="Логотип Chaturbate — источник статистики для моделей">
+      alt="Логотип Chaturbate — источник статистики для моделей" loading="lazy">
     <img class="stripchat" src="./assets/img/stripchat_logo.svg"
-      alt="Логотип Stripchat — интеграция с вебкам-ботом для сбора данных">
+      alt="Логотип Stripchat — интеграция с вебкам-ботом для сбора данных" loading="lazy">
   </div>
   <main>
     <h1><span class="top gradient-text">webcambot</span><span class="beta">(beta)</span><span
@@ -38,8 +37,10 @@
     <span class="now">Уже подключены: 3 студии и 7 моделей</span>
   </main>
   <div class="button-wrapper">
-    <a class="button" href="https://t.me/by_mak" target="_blank" rel="noopener">Подключить бота</a> <a class="button2"
-      href="https://pay.cloudtips.ru/p/031aff81" target="_blank" rel="noopener">Поддержать</a>
+    <a class="button" href="https://t.me/by_mak" target="_blank" rel="noopener"
+      aria-label="Подключить Telegram бота">Подключить бота</a>
+    <a class="button2" href="https://pay.cloudtips.ru/p/031aff81" target="_blank" rel="noopener"
+      aria-label="Поддержать проект">Поддержать</a>
   </div>
 
   <section class="first">
@@ -55,7 +56,7 @@
     </div>
 
     <div class="message vertical incoming parallax-message parallax-message">
-      <p class="br">✅ Обновлено: 16.06 20:00</p>
+      <p class="br">✅ Обновлено: 21.08 15:00</p>
       <p>👩 Модель: Sabrina</p>
       <p>👍 <span class="animate-number" data-animate="239">239</span> | 👎 0 | ❤️ <span class="animate-number"
           data-animate="100">100</span></p>
@@ -68,7 +69,7 @@
       <p>📈 Курс BTC: <span class="animate-number" data-animate="107303.4">107303.4</span></p>
       <p class="br">📈 Курс USDT: <span class="animate-number" data-animate="78.64">78.64</span></p>
       <p>Chaturbate (beta):</p>
-      <p>📅 Смена от 16.06.2025</p>
+      <p>📅 Смена от 21.08.2025</p>
       <p>📈 Средний онлайн: <span class="animate-number" data-animate="114">114</span> (-18)</p>
       <p>🚀 Макс. онлайн: <span class="animate-number" data-animate="278">278</span> (+32)</p>
       <p>🏆 Позиция в топе: <span class="animate-number" data-animate="206">206</span> (+41)</p>
@@ -77,7 +78,7 @@
       <p>😴 Перерыв: <span class="animate-number" data-animate="0">0</span> мин (0)</p>
       <p class="br">👻 Приват: <span class="animate-number" data-animate="15">15</span> мин (+7)</p>
       <p>Stripchat (beta):</p>
-      <p>📅 Смена от 16.06.2025</p>
+      <p>📅 Смена от 21.08.2025</p>
       <p>💯 StripScore: <span class="animate-number" data-animate="900">900</span></p>
       <p>📈 Средний онлайн: <span class="animate-number" data-animate="186">186</span></p>
       <p>🚀 Макс. онлайн: <span class="animate-number" data-animate="316">316</span> (+89)</p>
@@ -89,6 +90,7 @@
     </div>
   </section>
 
+  <!-- JSON-LD structured data -->
   <script type="application/ld+json">
 	{
 	  "@context": "https://schema.org",
@@ -100,113 +102,8 @@
 	  "description": "Telegram-бот для вебкам студий и моделей. Автоматизация, аналитика и расписания без логинов."
 	}
 	</script>
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function (m, e, t, r, i, k, a) {
-      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-      m[i].l = 1 * new Date();
-      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-    })
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(102320543, "init", {
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true,
-      webvisor: true
-    });
-  </script>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/102320543" style="position:absolute; left:-9999px;" alt="" /></div>
-  </noscript>
-  <!-- /Yandex.Metrika counter -->
-  </script>
-  <script>
-    const chat = document.querySelector('.chat');
-    const parallaxMessages = document.querySelectorAll('.parallax-message');
-    let mouseX = 0;
-    let mouseY = 0;
-    const defaultMaxMove = 10;
-    let isMouseInside = true;
-
-    document.addEventListener('mousemove', (e) => {
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      const dx = e.clientX - centerX;
-      const dy = e.clientY - centerY;
-      mouseX = (dx / centerX) * defaultMaxMove;
-      mouseY = (dy / centerY) * defaultMaxMove;
-    });
-
-    document.addEventListener('mouseleave', () => {
-      isMouseInside = false;
-    });
-
-    document.addEventListener('mouseenter', () => {
-      isMouseInside = true;
-    });
-
-    function animate() {
-      parallaxMessages.forEach(msg => {
-        const isHorizontal = msg.classList.contains('horizontal');
-        const moveFactor = isHorizontal ? 0.3 : 1;
-        const currentTransform = msg._currentTransform || { x: 0, y: 0 };
-        const targetX = isMouseInside ? (mouseX * moveFactor) : 0;
-        const targetY = isMouseInside ? (mouseY * moveFactor) : 0;
-
-        // interpolate smoothly
-        const newX = currentTransform.x + (targetX - currentTransform.x) * 0.1;
-        const newY = currentTransform.y + (targetY - currentTransform.y) * 0.1;
-
-        msg._currentTransform = { x: newX, y: newY };
-        msg.style.transform = `translate(${newX.toFixed(2)}px, ${newY.toFixed(2)}px)`;
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  </script>
-  <script>
-    function animateNumbers() {
-      const elements = document.querySelectorAll('.animate-number');
-
-      elements.forEach(el => {
-        const rawValue = el.dataset.animate.replace(/\s/g, '');
-        const finalValue = parseFloat(rawValue);
-        if (isNaN(finalValue)) return;
-
-        const isInteger = Number.isInteger(finalValue);
-        const duration = 1500;
-        const startTime = performance.now();
-
-        function easeOutCubic(t) {
-          return 1 - Math.pow(1 - t, 3);
-        }
-
-        function update(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeOutCubic(progress);
-          const interpolated = finalValue * easedProgress;
-
-          if (isInteger) {
-            el.textContent = Math.round(interpolated).toLocaleString('ru-RU');
-          } else {
-            el.textContent = interpolated.toFixed(1).replace('.', ',');
-          }
-
-          if (progress < 1) {
-            requestAnimationFrame(update);
-          }
-        }
-
-        requestAnimationFrame(update);
-      });
-    }
-
-    window.addEventListener('DOMContentLoaded', animateNumbers);
-  </script>
+  <!-- Main application script -->
+  <script src="./script.js" defer></script>
 </body>
 
 </html>
